@@ -1,9 +1,6 @@
-"""Speech recognition module"""
 import speech_recognition as sr
 from multiprocessing import Process
-
-def f(x):
-    print(f"{x}")
+from commands import process_command
 
 # Initialize the recognizer
 if __name__ == '__main__':
@@ -15,22 +12,22 @@ if __name__ == '__main__':
         try:
 
             # use the microphone as source for input.
-            with sr.Microphone() as source2:
+            with sr.Microphone() as source:
 
                 # wait for a second to let the recognizer
                 # adjust the energy threshold based on
                 # the surrounding noise level
-                r.adjust_for_ambient_noise(source2, duration=0.2)
+                r.adjust_for_ambient_noise(source, duration=0.2)
 
                 # listens for the user's input
                 print("What do you want to say?")
-                audio2 = r.listen(source2)
+                audio = r.listen(source)
 
                 # Using google to recognize audio
-                MyText = r.recognize_google(audio2)
-                MyText = MyText.lower()
+                command = r.recognize_google(audio)
+                command = command.lower()
 
-                p = Process(target=f, args=(MyText,))
+                p = Process(target=process_command, args=(command,))
                 p.start()
                 # print(f"Did you say {MyText}")
 
