@@ -1,6 +1,7 @@
 import speech_recognition as sr
 from multiprocessing import Process
-from commands import process_command
+from command import process_command
+from notification import send_notification
 
 # Initialize the recognizer
 if __name__ == '__main__':
@@ -20,7 +21,7 @@ if __name__ == '__main__':
                 r.adjust_for_ambient_noise(source, duration=0.2)
 
                 # listens for the user's input
-                print("What do you want to say?")
+                send_notification("What do you want to say?")
                 audio = r.listen(source)
 
                 # Using google to recognize audio
@@ -29,10 +30,9 @@ if __name__ == '__main__':
 
                 p = Process(target=process_command, args=(command,))
                 p.start()
-                # print(f"Did you say {MyText}")
 
         except sr.RequestError as e:
-            print(f"Could not request results; {0}".format(e))
+            send_notification(f"Could not request results; {0}".format(e))
 
         except sr.UnknownValueError:
-            print("unknown error occurred")
+            send_notification("unknown error occurred")
