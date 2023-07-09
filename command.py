@@ -10,6 +10,9 @@ def process_command(command):
     if len(command) == 2 and command[0] in "open" and command[1] in editor_names:
         send_notification("Opening Emacs...")
         os.system("emacs")
+    elif len(command) == 2 and command[0] in "open" and command[1] in "browser":
+        send_notification("Opening browser...")
+        os.system("xdg-open https://www.google.com/")
     elif len(command) == 2 and command[0] in "open":
         send_notification(f"Opening {command[1]}...")
         os.system(f"{command[1]}")
