@@ -1,5 +1,5 @@
 # Mael
-Mael is a speech-to-text Python bot to assist you in your daily man-to-computer communication. 
+Mael is a Linux-exclusive speech-to-text Python bot to assist you in your daily man-to-computer communication. 
 
 ## Dependencies
 To translate speech to text Mael uses module named [SpeechRecognition](https://pypi.org/project/SpeechRecognition/).

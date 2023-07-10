@@ -3,7 +3,7 @@ from multiprocessing import Process
 from command import process_command
 from notification import send_notification
 from pynput import keyboard
-
+from config import read_config
 
 def main():
     # Initialize the recognizer
@@ -41,6 +41,7 @@ def main():
 
 if __name__ == '__main__':
     # Listening begins only after pressing a hotkey
+    hotkey = read_config()
     with keyboard.GlobalHotKeys({
-            '<ctrl>+l': main}) as h:
+             hotkey: main}) as h:
         h.join()

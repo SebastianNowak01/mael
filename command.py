@@ -24,7 +24,3 @@ def process_command(command):
         print(f"{command}")
         os.system(f"xdg-open https://www.google.com/search?q={command}")
 
-
-if __name__ == '__main__':
-    X = "lorem ipsum dolor sit amet"
-    process_command(X)
