@@ -23,4 +23,3 @@ def process_command(command):
         command = "+".join(command)
         print(f"{command}")
         os.system(f"xdg-open https://www.google.com/search?q={command}")
-
