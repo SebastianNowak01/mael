@@ -23,6 +23,9 @@ Follow steps below to install Mael:
 ==Root privilages required== (run it with sudo).
 3. Restart your computer and voila! Mael is successfully installed on your computer.
 
+## Usage
+To start listening you have to press a keybind to activate Mael (default: \<ctrl\>+l).
+
 ### Configuration
 You can change  what keybind will trigger Mael in your configuration file.
 
