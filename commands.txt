@@ -1,0 +1,5 @@
+"open editor" - opens Emacs.
+"open browser" - opens default browser.
+"open [application]" - opens [application] if it is linstalled.
+"kill [application]" - kills all processess with name [application].
+Anything else is treated as a question and will be googled with your defalut browser.
