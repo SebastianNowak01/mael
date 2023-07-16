@@ -7,8 +7,6 @@ def create_service():
         file.write("[Unit]\nDescription=Mael, voice activated, virtual assistant\nAfter=graphical-session.target\n\n[Service]\nExecStart=/usr/bin/python3 /home/sebas/mael/main/main.py\nRestart=always\nRestartSec=3\n\n[Install]\nWantedBy=graphical-session.target")
         file.close()
     os.system(f"sudo mv {home}/mael.service /etc/systemd/user")
-    os.system("systemctl --user enable mael")
-    os.system("systemctl --user start mael")
 
 def create_config():
     home = os.getenv("HOME")
