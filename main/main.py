@@ -5,10 +5,10 @@ from notification import send_notification
 from pynput import keyboard
 from config import read_config
 
-def main():
+def main(hotkey):
     # Initialize the recognizer
     recognizer = sr.Recognizer()
-
+    print(f"{hotkey}")
     # Exception handling to handle
     # exceptions at the runtime
     try:
@@ -38,10 +38,10 @@ def main():
     except sr.UnknownValueError:
         send_notification("unknown error occurred")
 
-
 if __name__ == '__main__':
     # Listening begins only after pressing a hotkey
-    hotkey = read_config()
+    process_hotkey, listen_hotkey = read_config()
+    
     with keyboard.GlobalHotKeys({
-             hotkey: main}) as h:
+             process_hotkey: lambda: main(process_hotkey)}) as h:
         h.join()
