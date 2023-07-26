@@ -1,5 +1,6 @@
 import os
 from notification import send_notification
+from subprocess import Popen, PIPE
 
 close_commands = ["kill", "close"]
 editor_names = ["emacs", "editor"]
@@ -23,3 +24,8 @@ def process_command(command):
         command = "+".join(command)
         print(f"{command}")
         os.system(f"xdg-open https://www.google.com/search?q={command}")
+
+        
+def listen(text):
+    p = Popen(['xsel', '-bi'], stdin=PIPE)
+    p.communicate(input=text.encode())

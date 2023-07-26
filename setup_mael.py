@@ -14,7 +14,7 @@ def create_config():
     os.system(f"mkdir {home}/.config/mael")
     os.system(f"touch {home}/.config/mael/config.mael")
     with open(f"{home}/.config/mael/config.mael", "w") as file:
-        file.write("# Set your shotcut below. Keys are coded as they would be\n# in a pynput program.\n<ctrl>+l")
+        file.write("# Set your shotcut below. Keys are coded as they would be\n# in a pynput program.\n<ctrl>+l\n<ctrl>+s")
         file.close()
 
 if __name__ == '__main__':

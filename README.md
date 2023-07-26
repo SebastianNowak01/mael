@@ -29,6 +29,7 @@ Follow steps below to install Mael:
 
 ## Usage
 To start listening you have to press a keybind to activate Mael (default: \<ctrl\>+l).
+A brand new function! Now Mael can listen to what you say and save it to a clipboard! (default: \<ctrl\>+s).
 
 ### Configuration
 You can change  what keybind will trigger Mael in your configuration file.
